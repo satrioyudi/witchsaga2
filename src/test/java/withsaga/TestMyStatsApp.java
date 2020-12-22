@@ -9,9 +9,9 @@ import com.game.test.witchsaga.MyStatsApp;
 class TestMyStatsApp {
 	
 	private MyStatsApp myStatsApp;
-
+	
 	@Test
-	public void run() {
+	public void run_ok() {
 		myStatsApp = new MyStatsApp();
 		int ageOfDeath1 = 10;
 		int yearOfDeath1 = 12;
@@ -40,6 +40,19 @@ class TestMyStatsApp {
 		
 	}
 
+	@Test
+	public void run_not_ok() {
+		int ageOfDeath1 = 10;
+		int yearOfDeath1 = -7;
+		int res = 0;
+		
+		if (yearOfDeath1 < 1 || ageOfDeath1 < 1) {
+			res = -1;
+		}
+		
+		assertEquals(-1, res);
+	}
+	
     @Test
     public int callFibonacci(int i) {
         int testIndex = 2;
