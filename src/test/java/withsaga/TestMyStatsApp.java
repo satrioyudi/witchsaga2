@@ -58,8 +58,8 @@ class TestMyStatsApp {
         int testIndex = 2;
         int expectedResult = 2;
         
-        assertEquals(expectedResult, myStatsApp.callFibonacci(testIndex));
+        assertEquals(expectedResult, myStatsApp.fibonacciIterative(testIndex));
         
-        return myStatsApp.callFibonacci(i);
+        return myStatsApp.fibonacciIterative(i);
     }
 }

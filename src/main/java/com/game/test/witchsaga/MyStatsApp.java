@@ -47,9 +47,8 @@ public class MyStatsApp {
 		}
 		
 		if(!flag) {
-			totalList.forEach( x ->{
-				int yearOfDeathRes = callFibonacci(x);
-				System.out.println(yearOfDeathRes);
+			totalList.forEach( x ->{				
+				int yearOfDeathRes = fibonacciIterative(x);
 				resList.add(yearOfDeathRes);
 			});
 		
@@ -61,11 +60,18 @@ public class MyStatsApp {
 		}
 	}
 
-	public int callFibonacci(int n) {
-		if (n <= 1)
-	        return n;
-	    else
-	        return callFibonacci(n - 1) + callFibonacci(n - 2) + 1;
+	public int fibonacciIterative(int num) {
+		if(num <= 1) {
+			return num;
+		}
+		int fib = 1;
+		int prevFib = 1;
+		
+		for(int i = 1; i <= num; i++) {
+			int temp = fib;
+			fib += prevFib;
+			prevFib = temp;
+		}
+		return fib - 1;
 	}
-
 }
